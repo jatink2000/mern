@@ -18,7 +18,7 @@ function Signup() {
 
     let signup = () => {
 
-        axios.get("http://localhost:8080/allusers").then((res) => {
+        axios.get("https://mern-backend-omega-five.vercel.app/allusers").then((res) => {
             if (res.data.status) {
                 let groot = res.data.users
 
@@ -31,7 +31,7 @@ function Signup() {
                 }
                 
                 else {
-                    axios.post("http://localhost:8080/signup", { login }).then((res) => {
+                    axios.post("https://mern-backend-omega-five.vercel.app/signup", { login }).then((res) => {
                         if (res.data.stauts) {
                             alert(res.data.msg)
                         }

@@ -14,12 +14,12 @@ function Login() {
     let go = useNavigate()
 
     let logapi = () => {
-        axios.post("http://localhost:8080/admin", { login }).then((res) => {
+        axios.post("https://mern-backend-omega-five.vercel.app/admin", { login }).then((res) => {
             if (res.data.status) {
                 go("/admindashboard")
             }
             else {
-                axios.post("http://localhost:8080/login",{login}).then((res)=>{
+                axios.post("https://mern-backend-omega-five.vercel.app/login",{login}).then((res)=>{
                     if(res.data.status){
                         alert(res.data.msg)
                         go("/home")

@@ -10,7 +10,7 @@ function Products() {
     }, [])
 
     let ourproduct = () => {
-        axios.get("http://localhost:8080/ourproduct").then((res) => {
+        axios.get("https://mern-backend-omega-five.vercel.app/ourproduct").then((res) => {
             if (res.data.status) {
                 setapidata(res.data.product)
             }
@@ -23,7 +23,7 @@ function Products() {
     // addtocart ----------
 
     let addtocart = (item) => {
-        axios.get("http://localhost:8080/cartproduct").then((res) => {
+        axios.get("https://mern-backend-omega-five.vercel.app/cartproduct").then((res) => {
             if (res.data.status) {
                 let alreadycartitem = res.data.product
                 let filtercartitem = alreadycartitem.filter(data => data.productid == item._id)
@@ -32,7 +32,7 @@ function Products() {
                     alert("already in cart")
                 }
                 else {
-                    axios.post("http://localhost:8080/addtocart",{item}).then((res) => {
+                    axios.post("https://mern-backend-omega-five.vercel.app/addtocart",{item}).then((res) => {
                         if (res.data.status) {
                            alert(res.data.msg)
                         }

@@ -17,7 +17,7 @@ function Updateproduct() {
 
 
   let updateproduct=()=>{
-    axios.post("http://localhost:8080/updateproduct",{product})
+    axios.post("https://mern-backend-omega-five.vercel.app/updateproduct",{product})
   }
 
   return (

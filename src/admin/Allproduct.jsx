@@ -11,7 +11,7 @@ function Allproduct() {
         }, [])
     
         let ourproduct = () => {
-            axios.get("http://localhost:8080/ourproduct").then((res) => {
+            axios.get("https://mern-backend-omega-five.vercel.app/ourproduct").then((res) => {
                 if (res.data.status) {
                     setapidata(res.data.product)
                 }
@@ -22,7 +22,7 @@ function Allproduct() {
 
 
         let deleteprouct=(item)=>{
-            axios.post("http://localhost:8080/deleteproduct",{item}).then((res)=>{
+            axios.post("https://mern-backend-omega-five.vercel.app/deleteproduct",{item}).then((res)=>{
                 if(res.data.status){
                     alert(res.data.msg)
                 }

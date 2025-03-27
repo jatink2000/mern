@@ -11,7 +11,7 @@ function Cart() {
     }, [])
 
     let cartproduct = () => {
-        axios.get("http://localhost:8080/cartproduct").then((res) => {
+        axios.get("https://mern-backend-omega-five.vercel.app/cartproduct").then((res) => {
             if (res.data.status) {
                 setapidata(res.data.product)
             }
@@ -24,7 +24,7 @@ function Cart() {
     // remove product 
 
     let removeproduct=(item)=>{
-        axios.post("http://localhost:8080/removecartproduct",{item}).then((res) => {
+        axios.post("https://mern-backend-omega-five.vercel.app/removecartproduct",{item}).then((res) => {
             if (res.data.status) {
                 alert(res.data.msg)
                 window.location.reload()
@@ -42,13 +42,13 @@ function Cart() {
         let [quantity,setquantity]= useState(data.productquantity)
         let increment=()=>{
             setquantity(++quantity)
-            axios.post("http://localhost:8080/updatecartproduct",{quantity,data})
+            axios.post("https://mern-backend-omega-five.vercel.app/updatecartproduct",{quantity,data})
         }
 
 
         let decrement=()=>{
             setquantity(--quantity)
-            axios.post("http://localhost:8080/updatecartproduct",{quantity,data})
+            axios.post("https://mern-backend-omega-five.vercel.app/updatecartproduct",{quantity,data})
         }
 
         return(
